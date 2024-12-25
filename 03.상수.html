@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let과 const</title>
+</head>
+<body>
+    <script>
+        // 상수(값을 못바꿈)
+        let num = 10;
+        const num2 = 20;
+        // num = 100 // 가능
+        // num2 = 200 // 불가능
+
+        let power = num => num * num 
+        // 이런 함수를
+        power = 2 // 미친 개발자가 아래에 이렇게 선언해 버릴수 있기 때문에
+
+        // 뭔가를 선언한다면 const를 기본적으로 사용하고
+        // 로직에 의해 값이 바껴야 하는 경우에만 let을 씀 (count 변수/ for 문 안에 인덱스)
+        // 코드 안전성을 위해 이렇게 사용합시다.
+        const power2 = num => num * num 
+    </script>
+</body>
+</html>

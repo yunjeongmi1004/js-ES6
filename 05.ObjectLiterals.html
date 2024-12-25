@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literals</title>
+</head>
+<body>
+    <script>
+        // list처럼 사용하는 문법(자료구조)
+        const list = [1, 2, 3]
+        list[0] // 1
+        list[2] // 2
+
+
+        const object = {
+            "location" : "인천",
+            "name" : "윤정미"
+        }
+        const key = "location"
+        console.log(object.location) // 인천 : 마침표 표기법
+        console.log(object[key]) // 인천 : 대괄호 표기법
+        console.log(object["location"]) // 인천 : 대괄호 표기법
+
+        
+        // 이 내용은 왜 했는지 기억이 안남 질문할것
+        const returnObj = (key) => {
+            const rtobject = {
+                "location" : "서울",
+                "name" : "한국"
+            }
+
+            return rtobject[key]
+        }
+        console.log(returnObj["location"])
+
+
+        let myFavorite = {
+            "sport" : "helth",
+            "game" : "lol"
+        }
+
+        // 생성
+        myFavorite.food = "떡볶이";
+        console.log(myFavorite.food)
+
+        // 갱신
+        myFavorite.food = "삼겹살";
+        console.log(myFavorite.food)
+
+        // 삭제
+        delete myFavorite.food
+        console.log(myFavorite.food)
+
+
+
+
+    </script>
+</body>
+</html>

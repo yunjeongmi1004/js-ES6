@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 선언식 vs 함수 표현식 vs 함수 람다식</title>
+</head>
+<body>
+    <script>
+        function 함수선언식(){
+            console.log("함수 선언식 입니다")
+        }
+        함수선언식()
+
+        let 함수표현식 = function(){
+            console.log("함수 표현식 ES6 입니다")
+        }
+        함수표현식()
+
+        let 함수람다식 = () => console.log("함수 람다식 ES7 입니다.")
+        함수람다식()
+
+
+        // 0. 람다식 축약 방법
+        // 1. 함수의 매개변수가 오직 1개라면 소괄호를 생략할 수 있음
+        // let power = (num) =>{
+        //     return num * num
+        // }
+        let power = num => {
+            return num * num
+        }
+        console.log(power(2))
+
+        // 2. 함수의 내용이 명령어 1개라면 중괄호 생략 가능 
+        // + 중괄호 지웠는데 남은게 return 명령어라면 return도 생략
+
+        // let power2 = num => {
+        //     return num * num
+        // }
+        let power2 = num => num * num;
+        console.log(power2(3))
+
+        // *** 앞으로는 let과 람다식을 사용하시길
+
+    </script>
+    
+</body>
+</html>

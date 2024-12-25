@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring : 재분배</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            "x" : 10,
+            "y" : 20
+        }
+        const test = (object) => {
+
+            // const x = object.x 
+            // const y = object.y
+            const {x, y} = object // 위 두개를 합치는 표현
+            console.log(x)
+        }
+        test(obj)
+
+
+        const list = [1, 2, 3]
+        // const num1 = list[0]
+        // const num2 = list[1]
+        // const num3 = list[2]
+
+        const [num1, num2, num3 ] = list
+        console.log(list)
+    </script>
+</body>
+</html>

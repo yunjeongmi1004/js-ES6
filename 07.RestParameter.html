@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        // React props 변수 몰아서 받을 때 많이 씀
+        const sum = (...num) => {
+            console.log(num)
+        }
+        // 매개변수 수에 상관 없이 매개변수를 넣을 수 있다.
+        sum(1,2,10)
+
+
+        const func = (arg1, arg2, ...args) =>{
+            return [arg1, arg2, args]
+        }
+
+        console.log(func(1))
+        console.log(func(1,2,3,4,5)) // [1,2,[3,4,5]]
+
+        // 1. rest parameter는 함수 객체의 lenth 프로퍼티에 영향을 주지 않는다. 
+
+        // 2. 전달인자의 수가 정해져 있지 않는 경우에 사용할 수 있다.
+        const sum2 = (...num) => {
+            let total = 0
+            for (let index = 0; index < num.length ; index++){
+                total += num[index]
+            }
+            console.log(total) 
+        }
+        sum2(1,2,3)
+
+
+    </script>
+</body>
+</html>

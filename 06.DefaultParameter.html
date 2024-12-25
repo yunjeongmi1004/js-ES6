@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Parameter</title>
+</head>
+<body>
+    <script>
+
+        // 함수의 유연함을 챙길 수 있음
+        const area = (radius, pie = 3.14) => {
+            console.log(radius * radius * pie)
+        }
+        area(3, 3.141592)
+        area(3)
+
+    </script>
+</body>
+</html>

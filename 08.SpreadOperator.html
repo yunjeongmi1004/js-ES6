@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator(자료구조를 풀어서 뿌려주는 문법)</title>
+</head>
+<body>
+    <script>
+        const list = [1, 2, 3, 4, 5]
+        console.log(list) // [1,2,3,4,5]
+        console.log(...list) // 1 2 3 4 5
+
+        // case 1 : 자료구조 2개 합칠 때
+        const list1 = [1, 2, 3]
+        const list2 = [4, 5]
+        const newList = [...list1, ...list2]
+
+        console.log(newList)
+
+        // case 2 : 원본 값과의 링크를 끊을 때 (정말 중요)
+        // 원시타입 : int, string, doble 등
+        const test = (number) => {
+            number += 1
+            console.log(number)
+        }
+        const num = 10;
+        test(num) // 11
+        console.log(num) // 10 : pass by value : 변수 자체를 보내는게 아니라 값만을 보내기에 해당값은 11이라 착각 할수도 있지만 10이다.
+        test(11) // 12
+
+        // 참조타입 : list, object, hash등(흔히 자료구조라 불리는 애들)
+        const test2 = (number) =>{
+            number[0] += 1
+            console.log(number)
+        }
+        const num2 = [10]
+        test2(num2) // 11
+        console.log(num2)// 11 : pass by reference : 메모리에 대한 주소를 보내기 때문에 11
+        test2([20, 1])
+
+
+        // 순수함수 : 자기 외부에 있는 값에 영향을 주지 않는 함수 
+        // 원본값 훼손 안하는 것
+        const test3 = ([...number]) => {
+            number[0] += 1
+            console.log(number)
+        }
+        const list3 = [30]
+        test3(list3) // 31
+        console.log(list3) // 30
+
+        const test4 = (number) =>{
+            number[0] += 1
+            console.log(number)
+        }
+        const list4 = [40]
+        test4([...list4]) // 41
+        console.log([...list4]) // 40
+
+
+    </script>
+</body>
+</html>

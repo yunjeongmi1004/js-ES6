@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Helper Method : 리스트를 가지고 반복문을 써야할 때 간편하게 해주는 문법</title>
+</head>
+<body>
+    <script>
+        // 1. forEach
+        const list = [1, 2, 3, 4, 5]
+        for(let index = 0; index < list.length ; index ++){
+            console.log(list[index]);
+        }
+
+        list.forEach((elem) => {
+            console.log(elem) // 위의 for문과 같음
+        });
+
+        list.forEach(elem => console.log(elem)) // 위 내용 한줄로 표현
+
+        
+        
+        // 2. map(리턴 필수, 반복해서 다른곳에 저장한다)
+        const newList = list.map((elem) => {
+            return elem * elem
+        })
+        console.log(newList)
+
+
+
+        // 3. filter(조건이 필수다)
+        const newListfilter =  list.filter((elem) => {
+            return elem < 4
+        })
+        console.log(newListfilter) // [1, 2, 3]
+        console.log(list)// [1, 2, 3, 4, 5]
+        const newList2 = list.filter(elem => elem % 2 == 1) // 나머지가 2인 인덱스만 필터뽑기
+        console.log(newList2) // [1, 3, 5]
+        
+
+
+        // 4. every() : 배열안의 모든 요소가 조건을 만족하면 true를 반환한다.
+        let arr = ["사과", "딸기", "바나나"]
+        answer = arr.every((elem) => elem.length === 2)
+        console.log(answer)
+
+        // 5. some() : 배열안의 한 요소라도 조건을 만족하면 true를 반환한다.
+        answer = arr.some((elem) => elem.length === 2)
+        console.log(answer)
+
+        // 6. reduce() : 배열의 각 요소에 대해 주어진 reduce함수를 실행하고 하나의 값을 반환
+        const numbers = [1,2,3,4,5]
+        const sumnum = numbers.reduce((acc, element) => acc + element, 0)
+        console.log(sumnum) // 15
+
+        // 7. find() : 주어진 판별 함수를 만족하는 첫번째 요소의 값을 반환
+        const avengers = [
+            {name:'aa',age:45},
+            {name:'ba',age:32},
+            {name:'bb',age:13}
+        ]
+        const aa = avengers.find(avenger => avenger.name === 'aa')
+        console.log(aa) // {name: 'aa', age: 45}
+
+
+
+    </script>
+</body>
+</html>

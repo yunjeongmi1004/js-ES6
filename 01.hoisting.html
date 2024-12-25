@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 : 1. 중복 선언 & Hosting</title>
+</head>
+<body>
+    <script>
+
+        // 1. var는 중복선언 가능
+        var num  = 10
+        console.log(num) // 10
+
+        var num = 20
+        console.log(num) // 20
+
+        // 1-1. 호이스팅으로 인해 해당형태로 되기 때문에 위는 10 아래는 20
+        var num 
+        num = 10
+        console.log(num)
+        num = 20
+        console.log(num)
+        
+
+        // 2. 함수 호이스팅
+        function test(){
+            console.log("test")
+        }
+        test()
+        function test(){
+            console.log("test2")
+        }
+        test()
+
+        // 2-2. 호이스팅으로 인해 해당형태로 되기 때문에 위 test2 / 아래 test2 
+        function test(){
+            console.log("test")
+        }
+        function test(){
+            console.log("test2")
+        }
+        test()
+        test()
+
+        // 3. 함수 표현식의 경우
+        // test3()
+        // let test3 = function(){
+        //     console.log("test3")
+        // }
+
+        // 3-1. 실제 돌아가는 원리이므로 에러가 납니다
+        // let test3;
+        // test3()
+        // test3 = function(){
+        //     console.log(test3)
+        // }
+     
+    </script>
+</body>
+</html>
